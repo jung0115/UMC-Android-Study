@@ -4,23 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".MainActivity2"
     android:orientation="vertical"
     android:gravity="center">
 
-
-    <EditText
-        android:id="@+id/activity1_edittext"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="text를 입력하세요."/>
-
-    <Button
-        android:id="@+id/activity1_btn"
+    <TextView
+        android:id="@+id/activity2_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Text 전달"
+        android:textSize="20dp"
+        android:text=""/>
+
+    <Button
+        android:id="@+id/go_activity3_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="activity3으로 이동"
         android:textSize="20dp"/>
 
 </LinearLayout>
