@@ -4,24 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".SecondActivity"
     android:orientation="vertical"
     android:gravity="center">
 
-
-    <EditText
-        android:id="@+id/memo_edittext"
-        android:layout_width="300dp"
-        android:layout_height="500dp"
-        android:hint="메모할 내용을 입력하세요."
-        android:background="#c9c9c9"/>
-
-    <Button
-        android:id="@+id/memo_btn"
+    <TextView
+        android:id="@+id/memo_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="메모 작성"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:text=""/>
 
 </LinearLayout>
