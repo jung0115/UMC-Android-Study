@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MemoListActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/memo_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="7dp"
+        android:text="메모 추가"
+        android:textSize="20dp"/>/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_switch"
@@ -13,6 +22,6 @@
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
-        tools:listitem="@layout/item_recycler_switch" />
+        tools:listitem="@layout/item_recycler_memo" />
 
 </LinearLayout>
