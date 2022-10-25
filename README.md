@@ -6,7 +6,7 @@ Android with Kotlin
 **🌼 1주차**  
 Challenge Mission  
 : 6가지 Layout을 모두 사용하여 자유롭게 화면 만들어보기  
-###### |- Seminar: 2022.09.24.Sat  
+|- Seminar: 2022.09.24.Sat  
 |- Study: 2022.09.28.Wed  
   
 **🐢 2주차**  
