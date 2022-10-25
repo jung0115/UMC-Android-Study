@@ -21,7 +21,8 @@ Challenge Mission
 Common Mission  
 : 만드는 모든 Activity와 Fragment에 ViewBinding 적용하기  
 Standard Mission  
-: Intent를 이용하여 서로 통신하는 Activity 2개 만들기, 1개의 Activity에서 2개의 Fragment 사용해보기  
+: Intent를 이용하여 서로 통신하는 Activity 2개 만들기,  
+1개의 Activity에서 2개의 Fragment 사용해보기  
 |- Seminar: 2022.10.08.Sat  
 |- Study: 2022.10.12.Wed  
   
@@ -33,7 +34,8 @@ Standard Mission
   
 **🧀 5주차**  
 Standard Mission  
-: RecyclerView Item에 스위치를 넣고 스크롤했을 때 스위치 ON/OFF가 이상하게 설정되는 문제 해결해보기, RecyclerView를 활용한 메모장 앱 만들기  
+: RecyclerView Item에 스위치를 넣고 스크롤했을 때 스위치 ON/OFF가 이상하게 설정되는 문제 해결해보기,  
+RecyclerView를 활용한 메모장 앱 만들기  
 |- Seminar: 2022.10.22.Sat  
 |- Study: 중간시험 기간  
   
