@@ -3,6 +3,11 @@ package com.bicontest.umc_week5
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bicontest.umc_week5.databinding.ActivityMemoListBinding
 
 class MemoListActivity : AppCompatActivity() {
@@ -11,6 +16,8 @@ class MemoListActivity : AppCompatActivity() {
     lateinit var memoAdapter: MemoAdapter
     val datas = mutableListOf<MemoData>()
 
+    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -18,31 +25,54 @@ class MemoListActivity : AppCompatActivity() {
         viewBinding = ActivityMemoListBinding.inflate(layoutInflater);
         setContentView(viewBinding.root)
 
-        viewBinding.memoBtn.setOnClickListener {
-            // MemoWriteActivity로 데이터 전달
-            val intent = Intent(this, MemoWriteActivity::class.java)
-            startActivity(intent)
+        initSwitchRecycler()
+
+        activityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ){ result: ActivityResult ->
+            //Toast.makeText(this, "check", Toast.LENGTH_SHORT).show()
+            if(result.resultCode == RESULT_OK){
+                val mMemoContent : String = result.data?.getStringExtra("memoText").toString()
+                addItem(mMemoContent)
+                //Toast.makeText(this, mMemoContent, Toast.LENGTH_SHORT).show()
+            }
         }
 
-        // MemoWriteActivity에서 전달된 데이터 받아오기
-        val memoWriteIntent = intent
-        val mMemoContent : String = memoWriteIntent.getStringExtra("memoText").toString()
-
-        initSwitchRecycler()
-        if(mMemoContent != "") addItem(mMemoContent)
+        // 메모 작성 버튼 클릭 시
+        viewBinding.memoBtn.setOnClickListener {
+            // 메모 작성 페이지로 이동
+            val intent = Intent(this, MemoWriteActivity::class.java)
+            activityResultLauncher.launch(intent)
+        }
     }
 
     private fun initSwitchRecycler() {
-        memoAdapter = MemoAdapter(this)
-        viewBinding.recyclerviewSwitch.adapter = memoAdapter
+        memoAdapter  = MemoAdapter(
+            this,
+            onClickDeleteMemo = {
+                deleteItem(it)
+            }
+        )
 
+        viewBinding.recyclerviewSwitch.layoutManager = LinearLayoutManager(this)
+        viewBinding.recyclerviewSwitch.adapter = memoAdapter
         memoAdapter.datas = datas
-        memoAdapter.notifyDataSetChanged()
+        //memoAdapter.notifyDataSetChanged()
     }
 
+    // 메모 추가
     private fun addItem(mMemoText : String) {
         datas.apply {
             add(MemoData(memoText = mMemoText))
+            memoAdapter.notifyDataSetChanged()
+        }
+    }
+
+    // 메모 삭제
+    private fun deleteItem(mMemo : MemoData) {
+        datas.apply {
+            remove(mMemo)
+            memoAdapter.notifyDataSetChanged()
         }
     }
 }

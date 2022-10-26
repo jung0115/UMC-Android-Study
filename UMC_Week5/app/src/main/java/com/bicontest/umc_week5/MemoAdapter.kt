@@ -6,7 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bicontest.umc_week5.databinding.ItemRecyclerMemoBinding
 
-class MemoAdapter (private val context: Context) :
+class MemoAdapter (
+    private val context: Context,
+    val onClickDeleteMemo: (memo: MemoData) -> Unit // 메모 클릭 시 onClickDeleteMemo 실행
+    ) :
     RecyclerView.Adapter<MemoAdapter.MemoViewHolder>(){
 
     var datas = mutableListOf<MemoData>()
@@ -22,6 +25,11 @@ class MemoAdapter (private val context: Context) :
 
     override fun onBindViewHolder(holder: MemoAdapter.MemoViewHolder, position: Int) {
         holder.bind(datas[position])
+
+        // 메모 클릭 시
+        holder.itemView.setOnClickListener {
+            onClickDeleteMemo.invoke(datas[position]) //삭제 함수 호출
+        }
     }
 
     inner class MemoViewHolder(val binding: ItemRecyclerMemoBinding) :

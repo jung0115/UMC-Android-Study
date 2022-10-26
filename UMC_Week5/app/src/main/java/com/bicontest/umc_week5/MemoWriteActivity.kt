@@ -18,16 +18,18 @@ class MemoWriteActivity : AppCompatActivity() {
         viewBinding = ActivityMemoWriteBinding.inflate(layoutInflater)
         setContentView(viewBinding.root)
 
-        // 메모 작성 버튼 클릭 시
+        // 메모 작성 완료 버튼 클릭 시
         viewBinding.memoBtn.setOnClickListener {
             // editText에 입력된 text를 가져옴
             var inputText = viewBinding.memoEdittext.text.toString()
 
             // MemoListActivity로 데이터 전달
-            val intent = Intent(this, MemoListActivity::class.java)
-            intent.putExtra("memoText", inputText)
-            startActivity(intent)
-            finish()
+            val intent = Intent(this, MemoListActivity::class.java).apply {
+                putExtra("memoText", inputText)
+            }
+            //startActivity(intent)
+            setResult(RESULT_OK, intent)
+            if(!isFinishing) finish()
         }
     }
 

@@ -20,8 +20,8 @@
         android:id="@+id/recyclerview_switch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"
         tools:listitem="@layout/item_recycler_memo" />
+    <!-- app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" -->
 
 </LinearLayout>
