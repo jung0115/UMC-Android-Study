@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/drawable/menu_selector.xml" value="0.195" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_blue_heart.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_green_heart.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_heart.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_pink_heart.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_star.xml" value="0.25364583333333335" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/layout/fragment_start.xml" value="0.1" />
+        <entry key="..\:/android/UMC/UMC_Week6/app/src/main/res/menu/bottom_menu.xml" value="0.25364583333333335" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
