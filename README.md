@@ -1,6 +1,6 @@
 # UMC Android Study
 Android with Kotlin  
-2022.09.24.토~  
+2022.09.24.토 ~ 2022.12.03.토  
   
 ## Android Mission
 **🌼 1주차**  
